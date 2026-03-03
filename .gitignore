@@ -1,0 +1,15 @@
+*.pt
+*.jpg
+*.png
+.conda/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.env.*
+token*
+credentials*
+*.pem
+*.key
+*.p12
+*.pfx
+*.json
