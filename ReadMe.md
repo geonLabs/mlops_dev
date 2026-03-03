@@ -53,6 +53,8 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 Frontend:
+
+test입니다
 - `http://127.0.0.1:8000/`
 - Frontend shows CVAT login popup modal
 - After login, frontend loads organization dropdown, then project dropdown
