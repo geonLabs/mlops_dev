@@ -60,6 +60,45 @@ Frontend:
 Swagger:
 - `http://127.0.0.1:8000/docs`
 
+## Git Collaboration Rules
+
+### Repository settings (maintainer)
+1. Add members:
+   - GitHub repo -> `Settings` -> `Collaborators and teams`
+   - Invite members with `Write` permission (or higher)
+2. Protect `main` branch:
+   - GitHub repo -> `Settings` -> `Branches` (or `Rules` -> `Rulesets`)
+   - Enable:
+     - `Require a pull request before merging`
+     - `Require approvals` (recommended: at least 1)
+     - `Require conversation resolution before merging`
+   - Recommended:
+     - `Restrict pushes` on `main` (block direct push)
+     - `Require status checks to pass` (if CI exists)
+
+### Member workflow
+1. Sync latest main:
+```bash
+git checkout main
+git pull origin main
+```
+2. Create feature branch:
+```bash
+git checkout -b feature/<short-topic>
+```
+3. Commit and push branch:
+```bash
+git add .
+git commit -m "feat: <summary>"
+git push -u origin feature/<short-topic>
+```
+4. Open Pull Request:
+   - Base: `main`
+   - Compare: `feature/<short-topic>`
+5. Merge policy:
+   - Do not push directly to `main`
+   - Merge only through approved PR
+
 ## Required Environment Variables
 
 ### CVAT + Gmail
