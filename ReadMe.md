@@ -194,3 +194,34 @@ curl -X POST http://127.0.0.1:8000/upload/image \
   -F "task_name=task_20260303_235959" \
   -F "org=my-org-slug"
 ```
+
+---
+
+## 작업자가 올리는 올바른 절차
+
+1) 브랜치에서 작업
+
+```bash
+git checkout -b feature/기능이름
+```
+
+2) 작업 후 커밋
+
+```bash
+git add .
+git commit -m "feat: 작업 내용"
+```
+
+3) 원격에 push
+
+```bash
+git push origin feature/기능이름
+```
+
+4) GitHub에서 Pull Request 생성
+
+- base: `main` (또는 저장소 기본 브랜치)
+- compare: `feature/기능이름`
+- 필요 시 리뷰어 지정 및 PR 설명 추가
+
+위 절차를 따라 작업해 주세요.
